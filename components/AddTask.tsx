@@ -23,7 +23,7 @@ const AddTask: React.FC<AddTaskProps> = () => {
       Name: newTaskName,
       Description: newTaskDescription,
       timestamp: serverTimestamp(),
-      email: currentUser.email,
+      email: currentUser?.email,
       taskCompleted: false,
     });
     setNewTaskName("");

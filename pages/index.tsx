@@ -2,20 +2,17 @@ import { Inter } from "next/font/google";
 import AddTask from "@/components/AddTask";
 import TaskList from "@/components/TaskList";
 import { auth } from "@/firebase";
-import { useAuth } from "@/Auth";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const signOut = () => {
     auth.signOut();
   };
-  const { currentUser } = useAuth();
-  console.log("current user is", currentUser);
   return (
     <main className="max-w-4xl mx-auto mt-4">
       <div className="flex items-center justify-center">
         <h1 className="text-2xl font-bold text-center">
-          {`${currentUser.displayName.split(" ")[0]}'s Personal Task Manager`}
+          {`Personal Task Manager`}
         </h1>
       </div>
       <div className="text-center my-5 flex flex-col gap-4">
